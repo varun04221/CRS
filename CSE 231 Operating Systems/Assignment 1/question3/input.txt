@@ -1,0 +1,5 @@
+1 5 xor
+1 2 product
+1 5 compare
+5 7 compare
+8 9 pruduct

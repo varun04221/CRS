@@ -1,0 +1,17 @@
+The car thread creates a semaphore for each of the following states:
+Car ready to load passengers
+All passengers have boarded
+Car ready to unload passengers
+The car thread then starts a loop where it loads, runs, and unloads passengers.
+To load passengers, the car thread waits for the car_ready semaphore to be signaled. This indicates that all passengers have finished boarding. The car thread then loads the passengers and signals the all_aboard semaphore.
+To run the ride, the car thread simply sleeps for a certain amount of time. This simulates the ride duration.
+To unload passengers, the car thread waits for the car_empty semaphore to be signaled. This indicates that all passengers have finished disembarking. The car thread then unloads the passengers and signals the car_ready semaphore.
+The passenger threads create a semaphore for each of the following states:
+Passenger ready to board
+Passenger has boarded
+Passenger ready to disembark
+Passenger has disembarked
+The passenger threads then start a loop where they board and disembark from the car.
+To board the car, the passenger thread waits for the car_ready semaphore to be signaled. This indicates that the car is ready to load passengers. The passenger thread then signals the passenger_ready semaphore and waits for the all_aboard semaphore to be signaled. This indicates that all passengers have boarded and the car is ready to go.
+To disembark from the car, the passenger thread waits for the car_empty semaphore to be signaled. This indicates that the car is ready to unload passengers. The passenger thread then signals the passenger_ready semaphore and waits for the car_empty semaphore to be signaled. This indicates that all passengers have disembarked and the car is empty.
+By using semaphores to synchronize the car and passenger threads, the code ensures that the car and passengers can interact safely without causing any concurrency bugs.

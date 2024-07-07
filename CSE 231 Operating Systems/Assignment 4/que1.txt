@@ -1,0 +1,1 @@
+Deadlocks can occur in the problem setup because each philospher needs to acquire two forks and a bowl in order to eat. If a philosopher acquires the forks and another philosopher acquires the bowl this will lead to wastage of resource and deadlock will occur.

@@ -1,0 +1,6 @@
+Result of xor 1 , 5 : 4 
+Result of product 1 , 2 : 2 
+Result of compare 1 , 5 : 5 
+Result of compare 5 , 7 : 7 
+Result of pruduct 8 , 9 : 9 
+
